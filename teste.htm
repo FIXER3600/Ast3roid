@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style >
+		canvas{
+			position:absolute;		
+			top:0px;
+			bottom:0px;
+			left:0px;
+			right:0px;
+			margin:auto;
+			
+		}
+		form{
+			
+			
+			width:600px;
+			bottom:10px;
+			margin-left:200;
+			align-content: center;
+		}
+		.botao{
+			width: 80px;
+		}
+		.nick{
+			width:200px;
+		}
+
+	</style>
+</head>
+<body>
+
+
+	
+		<center><input type="text"class="nick"id="nickname">	</center>
+		
+	<script >
+		
+		
+		teste={
+			_teste:[],
+			populavetor:function(){
+				for(var i=0;i<10;i++){
+					this._teste.push({
+						nome:"teste"+i,
+						num:Math.floor(Math.random()*20)
+					})
+				}
+			},
+
+		
+		 ordena:function(){
+			var aux=0;
+			for (var i=0;i<this._teste.length;i++){
+					for(var j=0;j<this._teste.length-1;j++){
+						if(this._teste[j].num<this._teste[j+1].num){
+
+							aux=this._teste[j];
+							this._teste[j]=this._teste[j+1];
+							this._teste[j+1]=aux;
+						}
+					}
+				}
+			}
+		}
+		teste.populavetor();
+		console.log(teste._teste);
+
+		teste.ordena();
+		console.log(teste._teste);
+	
+				
+	</script>
+</body>
+</html>
